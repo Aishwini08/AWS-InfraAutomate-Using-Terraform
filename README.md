@@ -58,16 +58,24 @@ This project automates the deployment of a highly available, scalable, and secur
    git clone https://github.com/<your-username>/aws-ecs-rds-terraform.git
    cd aws-ecs-rds-terraform
 
-2. Initialize Terraform ----> terraform init
+2. Initialize Terraform :
+   ```bash
+     terraform init
 
-3. Preview the deployment plan ------> terraform plan
+3. Preview the deployment plan:
+    ```bash
+        terraform plan
 
-4. Apply the infrastructure ------> terraform apply
+4. Apply the infrastructure:
+   ```bash
+     terraform apply
 
 
 5. Access the deployed application via the ALB DNS provided in the outputs.
    
 Folder Structure
+  ```bash
+
 aws-ecs-rds-terraform/
 │
 ├── main.tf              # Main Terraform configurations
