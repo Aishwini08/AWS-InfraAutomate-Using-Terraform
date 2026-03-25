@@ -1,3 +1,6 @@
+# --------------------------
+# Security Group for RDS
+# --------------------------
 resource "aws_security_group" "rds_sg" {
   name   = "rds-sg"
   vpc_id = var.vpc_id
@@ -17,6 +20,9 @@ resource "aws_security_group" "rds_sg" {
   }
 }
 
+# --------------------------
+# DB Subnet Group
+# --------------------------
 resource "aws_db_subnet_group" "rds_subnet" {
   name       = "rds-subnet-group"
   subnet_ids = var.private_subnets
@@ -26,6 +32,9 @@ resource "aws_db_subnet_group" "rds_subnet" {
   }
 }
 
+# --------------------------
+# RDS Postgres Instance
+# --------------------------
 resource "aws_db_instance" "postgres" {
   identifier        = "my-postgres-db"
   engine            = "postgres"
@@ -34,7 +43,7 @@ resource "aws_db_instance" "postgres" {
   allocated_storage = 20
 
   db_name  = "mydb"
-  username = "admin"
+  username = "myadmin"        # <-- fixed: changed from 'admin' to valid username
   password = var.db_password 
 
   db_subnet_group_name   = aws_db_subnet_group.rds_subnet.name
