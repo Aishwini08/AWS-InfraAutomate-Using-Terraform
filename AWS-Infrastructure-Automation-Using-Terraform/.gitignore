@@ -1,0 +1,15 @@
+# Terraform files
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# Variables (secrets)
+terraform.tfvars
+*.tfvars
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
