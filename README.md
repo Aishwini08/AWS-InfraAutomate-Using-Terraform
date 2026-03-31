@@ -64,7 +64,7 @@ This project automates the deployment of a highly available, scalable, and secur
 
 3. Preview the deployment plan:
     ```bash
-        terraform plan
+     terraform plan
 
 4. Apply the infrastructure:
    ```bash
